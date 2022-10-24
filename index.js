@@ -35,16 +35,15 @@ button.addEventListener("click", async function () {
 
     let dataProfile = await buscarProgramador(user);
                             console.log("DATOS:",dataProfile);
-                            console.log("DATOS:",dataProfile.avatar_url);
+                            // console.log("DATOS:",dataProfile.avatar_url);
     
 
         //return ["photo","name","description","linkGitHub"];
     let profile = new Card(dataProfile.avatar_url, dataProfile.login, dataProfile.bio, dataProfile.html_url);
-                            console.log(profile.linkGitHub);
+                            console.log(profile.photo);
 
 
-    myCard.innerHTML += profile.render();
-    // profile.render();
+    myCard.innerHTML += `${profile.render()}`;
 
     
 })
